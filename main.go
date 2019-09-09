@@ -13,7 +13,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/CyCoreSystems/kubetemplate"
+	"github.com/yongs2/kubetemplate"
 	"github.com/yongs2/netdiscover/discover"
 	"github.com/pkg/errors"
 )

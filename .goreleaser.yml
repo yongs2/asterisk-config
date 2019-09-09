@@ -33,7 +33,7 @@ changelog:
        - '^test:'
 
 dockers:
-   - image: cycoresystems/asterisk-config
+   - image: yongs2/asterisk-config
      tag_templates:
         - "{{ .Tag }}"
         - "v{{ .Major }}"
