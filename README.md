@@ -428,7 +428,7 @@ The IP addresses for the running Pod are made available, as well.
 **Format**: `{{.Network "<kind>"}}`
 
 The available data kinds correspond to the data available from
-[NetDiscover](https://github.com/CyCoreSystems/netdiscover):
+[NetDiscover](https://github.com/yongs2/netdiscover):
 
   - "hostname"
   - "privatev4"

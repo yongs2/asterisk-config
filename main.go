@@ -14,7 +14,7 @@ import (
 	"time"
 
 	"github.com/CyCoreSystems/kubetemplate"
-	"github.com/CyCoreSystems/netdiscover/discover"
+	"github.com/yongs2/netdiscover/discover"
 	"github.com/pkg/errors"
 )
 
