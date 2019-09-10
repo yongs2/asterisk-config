@@ -1,25 +1,25 @@
 project_name: Asterisk Config
 builds:
-   - binary: asterisk-config
-     env:
-        - CGO_ENABLED=0
-     goos:
-        - linux
-        - darwin
-        - windows
-     goarch:
-        - amd64
+  - binary: asterisk-config
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
 
 archive:
-   format: tar.gz
-   name_template: "{{ .Binary }}.{{ .Os }}.{{ .Arch }}"
-   files:
-      - 'defaults/*'
-      - 'defaults/ari.d/*'
-      - 'defaults/extensions.d/*'
-      - 'defaults/manager.d/*'
-      - 'defaults/pjsip.d/*'
-      - 'defaults/voicemail.d/*'
+  format: tar.gz
+  name_template: "{{ .Binary }}.{{ .Os }}.{{ .Arch }}"
+  files:
+    - 'defaults/*'
+    - 'defaults/ari.d/*'
+    - 'defaults/extensions.d/*'
+    - 'defaults/manager.d/*'
+    - 'defaults/pjsip.d/*'
+    - 'defaults/voicemail.d/*'
 checksum:
   name_template: 'checksums.txt'
 snapshot:
@@ -28,16 +28,15 @@ changelog:
   sort: asc
   filters:
     exclude:
-       - '^docs:'
-       - '^doc:'
-       - '^test:'
+      - '^docs:'
+      - '^doc:'
+      - '^test:'
 
 dockers:
-   - image: yongs2/asterisk-config
-     tag_templates:
-        - "{{ .Tag }}"
-        - "v{{ .Major }}"
-        - "v{{ .Major }}.{{ .Minor }}"
-        - latest
-     extra_files:
-        - 'defaults/'
+  - image_templates:
+    - "yongs2/asterisk-config:{{ .Tag }}"
+    - "yongs2/asterisk-config:v{{ .Major }}"
+    - "yongs2/asterisk-config:v{{ .Major }}.{{ .Minor }}"
+    - "yongs2/asterisk-config:latest"
+    extra_files:
+      - 'defaults/'
